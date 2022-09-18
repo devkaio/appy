@@ -10,6 +10,7 @@ class App extends StatelessWidget {
     return MaterialApp(
       title: 'APPY',
       theme: lightTheme,
+      debugShowCheckedModeBanner: false,
     );
   }
 }
