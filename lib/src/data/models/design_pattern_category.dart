@@ -1,6 +1,4 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
-
-import 'package:appy/src/models/design_pattern.dart';
+import 'design_pattern.dart';
 
 class DesignPatternCategory {
   final String id;
