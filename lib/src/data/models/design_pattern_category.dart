@@ -17,9 +17,9 @@ class DesignPatternCategory {
     return DesignPatternCategory(
       id: json['id'] as String,
       title: json['title'] as String,
-      color: json['color'] as int,
+      color: int.parse(json['color']),
       patterns: List<DesignPattern>.from(
-        (json['patterns'] as List<int>).map<DesignPattern>(
+        (json['patterns'] as List<dynamic>).map<DesignPattern>(
           (x) => DesignPattern.fromJson(x as Map<String, dynamic>),
         ),
       ),
