@@ -21,6 +21,7 @@ class Home extends StatelessWidget {
         child: SingleChildScrollView(
           padding: const EdgeInsets.all(Constants.large),
           child: Column(
+            mainAxisSize: MainAxisSize.min,
             children: [
               const MainMenuHeader(),
               FutureBuilder<List<DesignPatternCategory>>(
@@ -29,6 +30,7 @@ class Home extends StatelessWidget {
                 builder: (context, snapshot) {
                   if (snapshot.hasData) {
                     return ListView.builder(
+                      shrinkWrap: true,
                       itemCount: snapshot.data!.length,
                       itemBuilder: (context, index) => Container(
                         margin: const EdgeInsets.only(
