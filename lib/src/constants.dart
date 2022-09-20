@@ -12,7 +12,7 @@ class Constants {
   static const double large = 16.0;
   static const double extraLarge = 32.0;
 
-  //TODO: Assets
+  //Assets
   static const String designPatternsDataPath =
       'assets/data/design_patterns.json';
   static const String markdownPath = 'assets/markdown';
