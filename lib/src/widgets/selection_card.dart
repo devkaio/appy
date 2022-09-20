@@ -55,21 +55,19 @@ class SelectionCard extends StatelessWidget {
               height: _selectionCardHeight,
               width: double.infinity,
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
                     contentHeader,
-                    style: Theme.of(context).textTheme.subtitle1?.copyWith(
-                              fontSize: 26.0,
-                              color: Colors.white,
-                            ) ??
-                        titleStyle,
+                    style: Theme.of(context).textTheme.titleLarge ?? titleStyle,
+                    overflow: TextOverflow.ellipsis,
                   ),
+                  const SizedBox(height: Constants.large),
                   Text(
                     contentText,
-                    style: Theme.of(context).textTheme.subtitle2?.copyWith(
-                              color: Colors.white,
-                            ) ??
-                        subtitleStyle,
+                    style:
+                        Theme.of(context).textTheme.bodyText2 ?? subtitleStyle,
+                    overflow: TextOverflow.ellipsis,
                   ),
                 ],
               ),
