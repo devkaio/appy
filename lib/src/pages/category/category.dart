@@ -3,6 +3,7 @@ import 'package:appy/src/constants.dart';
 import 'package:appy/src/data/models/design_pattern_category.dart';
 import 'package:appy/src/pages/category/widgets/design_pattern_card.dart';
 import 'package:appy/src/widgets/fade_slide_transition.dart';
+import 'package:appy/src/widgets/platform_back_button.dart';
 import 'package:flutter/material.dart';
 
 import '../../widgets/coming_soon.dart';
@@ -92,10 +93,17 @@ class _CategoryState extends State<Category>
                       title: AnimatedOpacity(
                         opacity: _appBarTitleOpacity,
                         duration: const Duration(milliseconds: 250),
-                        child: Text(widget.category.title),
+                        child: Text(
+                          widget.category.title,
+                          style: Theme.of(context)
+                              .textTheme
+                              .headline5!
+                              .apply(color: Colors.white),
+                        ),
                       ),
                       backgroundColor: Color(widget.category.color),
                       elevation: _appBarElevation,
+                      leading: const PlatformBackButton(color: Colors.white),
                     ),
                   ),
                 ),
@@ -115,14 +123,8 @@ class _CategoryState extends State<Category>
                           FadeSlideTransition(
                             controller: _fadeSlideAnimationController,
                             slideAnimationTween: Tween<Offset>(
-                              begin: const Offset(
-                                0.0,
-                                0.5,
-                              ),
-                              end: const Offset(
-                                0.0,
-                                0.0,
-                              ),
+                              begin: const Offset(0.0, 0.5),
+                              end: const Offset(0.0, 0.0),
                             ),
                             begin: 0.0,
                             end: _animationIntervalStart,
