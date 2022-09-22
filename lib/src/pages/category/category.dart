@@ -35,7 +35,7 @@ class _CategoryState extends State<Category>
 
     _fadeSlideAnimationController = AnimationController(
       vsync: this,
-      duration: const Duration(milliseconds: 1500),
+      duration: const Duration(milliseconds: 800),
     )..forward();
 
     _scrollController = ScrollController()
