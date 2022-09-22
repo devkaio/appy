@@ -10,6 +10,7 @@ class Constants {
   static const double small = 4.0;
   static const double medium = 8.0;
   static const double large = 16.0;
+  static const double mediumLarge = 24.0;
   static const double extraLarge = 32.0;
 
   //Assets
