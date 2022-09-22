@@ -1,7 +1,7 @@
 # Exemplo de Markdown
 O Markdown permite que você inclua facilmente texto formatado, imagens e até mesmo código Dart formatado em seu aplicativo.
 
-## Stilos e formatação
+## Estilos e formatação
 
 Estilos de texto _italico_, __negrito__, or `codigo inline` .
 
@@ -11,7 +11,7 @@ Estilos de texto _italico_, __negrito__, or `codigo inline` .
 
 ## Links
 
-É possível usar [hiperlinks](hyperlink) no markdown
+É possível usar [hiperlinks](https://flutter.dev) no markdown
 
 ## Widget Markdown
 
