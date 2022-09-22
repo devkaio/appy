@@ -23,6 +23,7 @@ class HomeMenuCard extends StatelessWidget {
       titleStyle: Theme.of(context).textTheme.subtitle1?.copyWith(
             fontSize: Constants.mediumLarge,
             color: Colors.white,
+            fontWeight: FontWeight.bold,
           ),
       subtitleStyle: Theme.of(context).textTheme.subtitle2?.copyWith(
             fontSize: Constants.large,

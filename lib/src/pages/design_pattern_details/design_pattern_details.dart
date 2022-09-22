@@ -135,6 +135,7 @@ class _DesignPatternDetailsState extends State<DesignPatternDetails>
                   child: PreferredSize(
                     preferredSize: Size.fromHeight(_appBarHeight),
                     child: AppBar(
+                      centerTitle: true,
                       title: AnimatedOpacity(
                         opacity: _appBarTitleOpacity,
                         duration: const Duration(

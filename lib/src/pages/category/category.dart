@@ -90,6 +90,7 @@ class _CategoryState extends State<Category>
                   child: PreferredSize(
                     preferredSize: Size.fromHeight(_appBarHeigh),
                     child: AppBar(
+                      centerTitle: true,
                       title: AnimatedOpacity(
                         opacity: _appBarTitleOpacity,
                         duration: const Duration(milliseconds: 250),
@@ -135,8 +136,9 @@ class _CategoryState extends State<Category>
                                   style: Theme.of(context)
                                       .textTheme
                                       .headline4!
-                                      .apply(
+                                      .copyWith(
                                         color: Colors.white,
+                                        fontWeight: FontWeight.bold,
                                       ),
                                 ),
                               ],

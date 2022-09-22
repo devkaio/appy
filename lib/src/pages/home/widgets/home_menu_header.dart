@@ -15,14 +15,17 @@ class MainMenuHeader extends StatelessWidget {
         children: [
           Text(
             "APPY",
-            style: Theme.of(context).textTheme.headline4,
+            style: Theme.of(context)
+                .textTheme
+                .headline4
+                ?.copyWith(fontWeight: FontWeight.bold),
           ),
           const SizedBox(
             height: Constants.medium,
           ),
           Text(
-            "Criado com Flutter",
-            style: Theme.of(context).textTheme.headline5,
+            "Feito com Flutter",
+            style: Theme.of(context).textTheme.subtitle2,
           )
         ],
       ),
