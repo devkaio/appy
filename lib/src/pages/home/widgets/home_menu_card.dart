@@ -1,4 +1,4 @@
-import 'package:flutter/widgets.dart';
+import 'package:flutter/material.dart';
 
 import '../../../constants.dart';
 import '../../../data/models/design_pattern_category.dart';
@@ -17,9 +17,17 @@ class HomeMenuCard extends StatelessWidget {
       backgroundColor: Color(category.color),
       backgroundHeroTag: "${category.id}_background",
       contentHeader: category.title,
-      contentText: category.patterns.length == 1
-          ? '${category.patterns.length} pattern'
-          : '${category.patterns.length} patterns',
+      contentText: category.patterns.length > 1
+          ? '${category.patterns.length} patterns'
+          : '${category.patterns.length} pattern',
+      titleStyle: Theme.of(context).textTheme.subtitle1?.copyWith(
+            fontSize: Constants.mediumLarge,
+            color: Colors.white,
+          ),
+      subtitleStyle: Theme.of(context).textTheme.subtitle2?.copyWith(
+            fontSize: Constants.large,
+            color: Colors.white,
+          ),
       onTap: () => Navigator.pushNamed(
         context,
         Constants.categoryRoute,
