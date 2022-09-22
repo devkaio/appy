@@ -59,14 +59,14 @@ class SelectionCard extends StatelessWidget {
                 children: [
                   Text(
                     contentHeader,
-                    style: Theme.of(context).textTheme.titleLarge ?? titleStyle,
+                    style: titleStyle ?? Theme.of(context).textTheme.titleLarge,
                     overflow: TextOverflow.ellipsis,
                   ),
                   const SizedBox(height: Constants.large),
                   Text(
                     contentText,
                     style:
-                        Theme.of(context).textTheme.bodyText2 ?? subtitleStyle,
+                        subtitleStyle ?? Theme.of(context).textTheme.bodyText2,
                     overflow: TextOverflow.ellipsis,
                   ),
                 ],
