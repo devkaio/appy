@@ -12,21 +12,22 @@ class Routes {
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
       case Constants.initialRoute:
-        return MaterialPageRoute(builder: (_) => Home());
+        return MaterialPageRoute(builder: (context) => Home());
       case Constants.categoryRoute:
         return MaterialPageRoute(
-          builder: (_) => Category(
+          builder: (context) => Category(
             category: settings.arguments as DesignPatternCategory,
           ),
         );
       case "/intro":
         return MaterialPageRoute(
-            builder: (_) => DesignPatternDetails(
-                  designPattern: settings.arguments as DesignPattern,
-                  example: const Introduction(),
-                ));
+          builder: (context) => DesignPatternDetails(
+            designPattern: settings.arguments as DesignPattern,
+            example: const Introduction(),
+          ),
+        );
       default:
-        return MaterialPageRoute(builder: (_) => Home());
+        return MaterialPageRoute(builder: (context) => Home());
     }
   }
 }
