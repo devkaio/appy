@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'design_pattern.dart';
 
 class DesignPatternCategory {
@@ -13,16 +15,31 @@ class DesignPatternCategory {
     required this.patterns,
   });
 
-  factory DesignPatternCategory.fromJson(Map<String, dynamic> json) {
+  Map<String, dynamic> toMap() {
+    return <String, dynamic>{
+      'id': id,
+      'title': title,
+      'color': color,
+      'patterns': patterns.map((x) => x.toMap()).toList(),
+    };
+  }
+
+  factory DesignPatternCategory.fromMap(Map<String, dynamic> map) {
     return DesignPatternCategory(
-      id: json['id'] as String,
-      title: json['title'] as String,
-      color: int.parse(json['color']),
+      id: map['id'] as String,
+      title: map['title'] as String,
+      color: int.parse(map['color']),
       patterns: List<DesignPattern>.from(
-        (json['patterns'] as List<dynamic>).map<DesignPattern>(
-          (x) => DesignPattern.fromJson(x as Map<String, dynamic>),
+        (map['patterns'] as List).map<DesignPattern>(
+          (x) => DesignPattern.fromMap(x as Map<String, dynamic>),
         ),
       ),
     );
   }
+
+  String toJson() => json.encode(toMap());
+
+  factory DesignPatternCategory.fromJson(String source) =>
+      DesignPatternCategory.fromMap(
+          json.decode(source) as Map<String, dynamic>);
 }

@@ -10,11 +10,10 @@ class DesignPatternCategoriesRepository {
     final menuJson =
         await rootBundle.loadString(Constants.designPatternsDataPath);
 
-    final designPatternCategoryJsonList = List<DesignPatternCategory>.from(
-      (jsonDecode(menuJson) as List).map(
-        (e) => DesignPatternCategory.fromJson(e),
-      ),
-    );
+    final List decodedList = jsonDecode(menuJson);
+
+    final designPatternCategoryJsonList =
+        decodedList.map((e) => DesignPatternCategory.fromMap(e)).toList();
 
     return designPatternCategoryJsonList;
   }
