@@ -1,0 +1,27 @@
+[
+    {
+        "id": "criacional",
+        "title": "Padrões de Criação",
+        "color": "0xFF00BFFF",
+        "patterns": [
+            {
+                "id": "intro",
+                "title": "Introdução",
+                "description": "Lorem ipsum dolor sit amet, eiusmod do aliqua anim aliquip do in esse anim duis",
+                "route": "/intro"
+            }
+        ]
+    },
+    {
+        "id": "estrutural",
+        "title": "Padrões Estruturais",
+        "color": "0xFF3CB371",
+        "patterns": []
+    },
+    {
+        "id": "comportamental",
+        "title": "Padrões Comportamentais",
+        "color": "0xFFFF4500",
+        "patterns": []
+    }
+]

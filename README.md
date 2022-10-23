@@ -1,16 +1,19 @@
-# appy
+# APPY
 
-A new Flutter project.
+Projeto em Construção.
 
-## Getting Started
+Conheça o APPY, acrônimo para Aplicação de Padrões de Projeto YOLO.
 
-This project is a starting point for a Flutter application.
+O objetivo desse projeto é compartilhar conhecimentos acerda dos padrões de projeto conforme o livro Padrões de Projeto: Soluções de Projetos Reutilizáveis (Gang of Four).
 
-A few resources to get you started if this is your first Flutter project:
+## Clone & Run
+Para baixar e executar esse projeto, siga os passos abaixo:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+```
+git clone https://github.com/devkaio/appy.git -b intro
+cd appy
+flutter run
+```
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Resultado
+![image](screenshots/main.gif)
