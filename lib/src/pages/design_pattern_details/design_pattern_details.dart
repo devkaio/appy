@@ -168,6 +168,7 @@ class _DesignPatternDetailsState extends State<DesignPatternDetails>
                             Constants.large,
                           ),
                           child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               FadeSlideTransition(
                                 controller: _fadeSlideAnimationController,
@@ -211,7 +212,11 @@ class _DesignPatternDetailsState extends State<DesignPatternDetails>
                           ),
                         ),
                       ),
-                      widget.example
+                      Padding(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: Constants.large),
+                        child: widget.example,
+                      )
                     ],
                   ),
                 ),
