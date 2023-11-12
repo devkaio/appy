@@ -4,6 +4,7 @@ import 'package:appy/src/data/models/design_pattern_category.dart';
 import 'package:appy/src/pages/category/category.dart';
 import 'package:appy/src/pages/design_pattern_details/design_pattern_details.dart';
 import 'package:appy/src/pages/home/home.dart';
+import 'package:appy/src/widgets/design_patterns/singleton/singleton_example.dart';
 import 'package:flutter/material.dart';
 
 import 'widgets/introduction/introduction.dart';
@@ -24,6 +25,13 @@ class Routes {
           builder: (context) => DesignPatternDetails(
             designPattern: settings.arguments as DesignPattern,
             example: const Introduction(),
+          ),
+        );
+      case "/singleton":
+        return MaterialPageRoute(
+          builder: (context) => DesignPatternDetails(
+            designPattern: settings.arguments as DesignPattern,
+            example: const SingletonExample(),
           ),
         );
       default:

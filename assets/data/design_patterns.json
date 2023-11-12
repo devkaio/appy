@@ -9,6 +9,12 @@
                 "title": "Introdução",
                 "description": "Lorem ipsum dolor sit amet, eiusmod do aliqua anim aliquip do in esse anim duis",
                 "route": "/intro"
+            },
+            {
+                "id": "singleton",
+                "title": "Singleton",
+                "description": "Singleton é um padrão de design de criação que permite garantir que uma classe tenha apenas uma instância, ao mesmo tempo que fornece um ponto de acesso global para essa instância.",
+                "route": "/singleton"
             }
         ]
     },
