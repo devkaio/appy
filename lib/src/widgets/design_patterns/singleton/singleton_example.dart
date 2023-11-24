@@ -37,31 +37,30 @@ class _SingletonExampleState extends State<SingletonExample> {
   @override
   Widget build(BuildContext context) {
     return ScrollConfiguration(
-        behavior: const ScrollBehavior(),
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              ...stateList
-                  .map((e) => SingletonExampleCard(text: e.currentText))
-                  .toList(),
-              const SizedBox(height: 16.0),
-              PlatformButton(
-                text: "Alterar o texto para 'Singleton'",
-                onPressed: _setTextValues,
-              ),
-              PlatformButton(
-                text: 'Resetar',
-                onPressed: _resetTextValues,
-              ),
-              const SizedBox(
-                height: Constants.extraLarge,
-              ),
-              const Text(
-                "OBS: Altere o texto dos estados e navegue no aplicativo (por exemplo, vá para o menu principal e depois volte para este exemplo) para ver como o estado de Singleton se comporta!",
-                textAlign: TextAlign.justify,
-              )
-            ],
-          ),
-        ));
+      behavior: const ScrollBehavior(),
+      child: SingleChildScrollView(
+        child: Column(
+          children: [
+            ...stateList.map((e) => SingletonExampleCard(text: e.currentText)),
+            const SizedBox(height: 16.0),
+            PlatformButton(
+              text: "Alterar o texto para 'Singleton'",
+              onPressed: _setTextValues,
+            ),
+            PlatformButton(
+              text: 'Resetar',
+              onPressed: _resetTextValues,
+            ),
+            const SizedBox(
+              height: Constants.extraLarge,
+            ),
+            const Text(
+              "OBS: Altere o texto dos estados e navegue no aplicativo (por exemplo, vá para o menu principal e depois volte para este exemplo) para ver como o estado de Singleton se comporta!",
+              textAlign: TextAlign.justify,
+            )
+          ],
+        ),
+      ),
+    );
   }
 }
