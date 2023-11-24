@@ -6,9 +6,9 @@ import 'package:flutter/material.dart';
 class PlatformBackButton extends StatelessWidget {
   final Color color;
   const PlatformBackButton({
-    Key? key,
+    super.key,
     required this.color,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

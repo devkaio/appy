@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../constants.dart';
 
 class MainMenuHeader extends StatelessWidget {
-  const MainMenuHeader({Key? key}) : super(key: key);
+  const MainMenuHeader({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -15,17 +15,14 @@ class MainMenuHeader extends StatelessWidget {
         children: [
           Text(
             "APPY",
-            style: Theme.of(context)
-                .textTheme
-                .headline4
-                ?.copyWith(fontWeight: FontWeight.bold),
+            style: Theme.of(context).textTheme.headlineMedium?.copyWith(fontWeight: FontWeight.bold),
           ),
           const SizedBox(
             height: Constants.medium,
           ),
           Text(
             "Feito com Flutter",
-            style: Theme.of(context).textTheme.subtitle2,
+            style: Theme.of(context).textTheme.titleSmall,
           )
         ],
       ),

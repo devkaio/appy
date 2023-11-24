@@ -7,10 +7,9 @@ import 'widgets/home_menu_card.dart';
 import 'widgets/home_menu_header.dart';
 
 class Home extends StatelessWidget {
-  final DesignPatternCategoriesRepository repository =
-      DesignPatternCategoriesRepository();
+  final DesignPatternCategoriesRepository repository = DesignPatternCategoriesRepository();
 
-  Home({Key? key}) : super(key: key);
+  Home({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +27,7 @@ class Home extends StatelessWidget {
                 future: repository.get(),
                 initialData: const [],
                 builder: (context, snapshot) {
-                  if (snapshot.hasData) {
+                  if (snapshot.hasData && snapshot.data!.isNotEmpty) {
                     return ListView.builder(
                       shrinkWrap: true,
                       itemCount: snapshot.data!.length,

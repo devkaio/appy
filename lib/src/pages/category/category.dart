@@ -12,16 +12,15 @@ class Category extends StatefulWidget {
   final DesignPatternCategory category;
 
   const Category({
-    Key? key,
+    super.key,
     required this.category,
-  }) : super(key: key);
+  });
 
   @override
   State<Category> createState() => _CategoryState();
 }
 
-class _CategoryState extends State<Category>
-    with SingleTickerProviderStateMixin {
+class _CategoryState extends State<Category> with SingleTickerProviderStateMixin {
   final _animationIntervalStart = 0.65;
   final _appBarHeigh = 56.0;
   late AnimationController _fadeSlideAnimationController;
@@ -43,15 +42,9 @@ class _CategoryState extends State<Category>
         () {
           setState(
             () {
-              _appBarElevation = _scrollController.offset >
-                      _scrollController.initialScrollOffset
-                  ? 4.0
-                  : 0.0;
+              _appBarElevation = _scrollController.offset > _scrollController.initialScrollOffset ? 4.0 : 0.0;
 
-              _appBarTitleOpacity = _scrollController.offset >
-                      _scrollController.initialScrollOffset + _appBarHeigh / 2
-                  ? 1.0
-                  : 0.0;
+              _appBarTitleOpacity = _scrollController.offset > _scrollController.initialScrollOffset + _appBarHeigh / 2 ? 1.0 : 0.0;
             },
           );
         },
@@ -96,10 +89,7 @@ class _CategoryState extends State<Category>
                         duration: const Duration(milliseconds: 250),
                         child: Text(
                           widget.category.title,
-                          style: Theme.of(context)
-                              .textTheme
-                              .headline5!
-                              .apply(color: Colors.white),
+                          style: Theme.of(context).textTheme.headlineSmall!.apply(color: Colors.white),
                         ),
                       ),
                       backgroundColor: Color(widget.category.color),
@@ -131,23 +121,20 @@ class _CategoryState extends State<Category>
                             end: _animationIntervalStart,
                             child: Row(
                               children: [
-                                Text(
-                                  widget.category.title,
-                                  style: Theme.of(context)
-                                      .textTheme
-                                      .headline4!
-                                      .copyWith(
-                                        color: Colors.white,
-                                        fontWeight: FontWeight.bold,
-                                      ),
+                                Flexible(
+                                  child: Text(
+                                    widget.category.title,
+                                    style: Theme.of(context).textTheme.headlineMedium!.copyWith(
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                  ),
                                 ),
                               ],
                             ),
                           ),
                           const SizedBox(height: Constants.large),
-                          for (var i = 0;
-                              i < widget.category.patterns.length;
-                              i++)
+                          for (var i = 0; i < widget.category.patterns.length; i++)
                             FadeSlideTransition.staggered(
                               index: i,
                               controller: _fadeSlideAnimationController,
@@ -159,8 +146,7 @@ class _CategoryState extends State<Category>
                               begin: _animationIntervalStart,
                               end: 1.0,
                               child: Container(
-                                margin:
-                                    const EdgeInsets.only(top: Constants.large),
+                                margin: const EdgeInsets.only(top: Constants.large),
                                 child: DesignPatternCard(
                                   designPattern: widget.category.patterns[i],
                                 ),

@@ -12,7 +12,7 @@ class SelectionCard extends StatelessWidget {
   final TextStyle? subtitleStyle;
 
   SelectionCard({
-    Key? key,
+    super.key,
     required this.backgroundColor,
     required this.backgroundHeroTag,
     required this.contentText,
@@ -20,26 +20,30 @@ class SelectionCard extends StatelessWidget {
     required this.onTap,
     this.titleStyle,
     this.subtitleStyle,
-  }) : super(key: key);
+  });
 
   final _selectionCardBorderRadius = BorderRadius.circular(10.0);
-  final _selectionCardHeight = 112.0;
 
   @override
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        Material(
-          borderRadius: _selectionCardBorderRadius,
-          elevation: 8.0,
-          child: Hero(
-            tag: backgroundHeroTag,
-            child: Container(
-              decoration: BoxDecoration(
-                color: backgroundColor,
-                borderRadius: _selectionCardBorderRadius,
+        Positioned(
+          left: 0,
+          right: 0,
+          bottom: 0,
+          top: Constants.medium,
+          child: Material(
+            borderRadius: _selectionCardBorderRadius,
+            elevation: 8.0,
+            child: Hero(
+              tag: backgroundHeroTag,
+              child: Container(
+                decoration: BoxDecoration(
+                  color: backgroundColor,
+                  borderRadius: _selectionCardBorderRadius,
+                ),
               ),
-              height: _selectionCardHeight,
             ),
           ),
         ),
@@ -52,21 +56,25 @@ class SelectionCard extends StatelessWidget {
             onTap: onTap,
             child: Container(
               padding: const EdgeInsets.all(Constants.large),
-              height: _selectionCardHeight,
               width: double.infinity,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    contentHeader,
-                    style: titleStyle ?? Theme.of(context).textTheme.titleLarge,
-                    overflow: TextOverflow.ellipsis,
+                  Row(
+                    children: [
+                      Flexible(
+                        child: Text(
+                          contentHeader,
+                          style: titleStyle ?? Theme.of(context).textTheme.titleLarge,
+                          softWrap: true,
+                        ),
+                      ),
+                    ],
                   ),
                   const SizedBox(height: Constants.large),
                   Text(
                     contentText,
-                    style:
-                        subtitleStyle ?? Theme.of(context).textTheme.bodyText2,
+                    style: subtitleStyle ?? Theme.of(context).textTheme.bodyMedium,
                     overflow: TextOverflow.ellipsis,
                   ),
                 ],
