@@ -7,9 +7,9 @@ import '../../../widgets/selection_card.dart';
 class HomeMenuCard extends StatelessWidget {
   final DesignPatternCategory category;
   const HomeMenuCard({
-    Key? key,
+    super.key,
     required this.category,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -17,15 +17,13 @@ class HomeMenuCard extends StatelessWidget {
       backgroundColor: Color(category.color),
       backgroundHeroTag: "${category.id}_background",
       contentHeader: category.title,
-      contentText: category.patterns.length > 1
-          ? '${category.patterns.length} patterns'
-          : '${category.patterns.length} pattern',
-      titleStyle: Theme.of(context).textTheme.subtitle1?.copyWith(
+      contentText: category.patterns.length > 1 ? '${category.patterns.length} patterns' : '${category.patterns.length} pattern',
+      titleStyle: Theme.of(context).textTheme.titleMedium?.copyWith(
             fontSize: Constants.mediumLarge,
             color: Colors.white,
             fontWeight: FontWeight.bold,
           ),
-      subtitleStyle: Theme.of(context).textTheme.subtitle2?.copyWith(
+      subtitleStyle: Theme.of(context).textTheme.titleSmall?.copyWith(
             fontSize: Constants.large,
             color: Colors.white,
           ),

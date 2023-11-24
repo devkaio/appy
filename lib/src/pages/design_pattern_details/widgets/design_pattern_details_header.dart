@@ -6,9 +6,9 @@ import 'package:flutter/material.dart';
 class DesignPatternDetailsHeader extends StatelessWidget {
   final DesignPattern designPattern;
   const DesignPatternDetailsHeader({
-    Key? key,
+    super.key,
     required this.designPattern,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -16,22 +16,21 @@ class DesignPatternDetailsHeader extends StatelessWidget {
       children: [
         Row(
           children: [
-            Text(
-              designPattern.title,
-              style: Theme.of(context)
-                  .textTheme
-                  .headlineLarge
-                  ?.apply(color: Colors.black87),
+            Flexible(
+              child: Text(
+                designPattern.title,
+                style: Theme.of(context).textTheme.headlineLarge?.apply(color: Colors.black87),
+              ),
             ),
           ],
         ),
         const SizedBox(height: Constants.large),
         Row(
           children: [
-            Expanded(
+            Flexible(
               child: Text(
                 designPattern.description,
-                style: Theme.of(context).textTheme.subtitle2,
+                style: Theme.of(context).textTheme.titleSmall,
                 textAlign: TextAlign.justify,
                 overflow: TextOverflow.ellipsis,
                 maxLines: 99,

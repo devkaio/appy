@@ -8,9 +8,9 @@ class DesignPatternCard extends StatelessWidget {
   final DesignPattern designPattern;
 
   const DesignPatternCard({
-    Key? key,
+    super.key,
     required this.designPattern,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

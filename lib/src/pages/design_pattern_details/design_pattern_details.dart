@@ -12,17 +12,16 @@ class DesignPatternDetails extends StatefulWidget {
   final DesignPattern designPattern;
   final Widget example;
   const DesignPatternDetails({
-    Key? key,
+    super.key,
     required this.designPattern,
     required this.example,
-  }) : super(key: key);
+  });
 
   @override
   State<DesignPatternDetails> createState() => _DesignPatternDetailsState();
 }
 
-class _DesignPatternDetailsState extends State<DesignPatternDetails>
-    with TickerProviderStateMixin {
+class _DesignPatternDetailsState extends State<DesignPatternDetails> with TickerProviderStateMixin {
   final MarkdownRepository repository = MarkdownRepository();
   final double _animationIntervalStart = 0.65;
   final double _appBarHeight = 56.0;
@@ -39,25 +38,14 @@ class _DesignPatternDetailsState extends State<DesignPatternDetails>
   void initState() {
     super.initState();
 
-    _fadeSlideAnimationController = AnimationController(
-        vsync: this, duration: const Duration(milliseconds: 1200))
-      ..forward();
+    _fadeSlideAnimationController = AnimationController(vsync: this, duration: const Duration(milliseconds: 1200))..forward();
     _scrollController = ScrollController()
       ..addListener(() {
         setState(() {
-          _appBarElevation =
-              _scrollController.offset > _scrollController.initialScrollOffset
-                  ? 4.0
-                  : 0.0;
+          _appBarElevation = _scrollController.offset > _scrollController.initialScrollOffset ? 4.0 : 0.0;
 
-          _appBarTitleOpacity = _scrollController.offset >
-                  _scrollController.initialScrollOffset + _appBarHeight / 2
-              ? 1.0
-              : 0.0;
-          _bottomNavigationBarElevation = _scrollController.offset ==
-                  _scrollController.position.maxScrollExtent
-              ? 0.0
-              : 4.0;
+          _appBarTitleOpacity = _scrollController.offset > _scrollController.initialScrollOffset + _appBarHeight / 2 ? 1.0 : 0.0;
+          _bottomNavigationBarElevation = _scrollController.offset == _scrollController.position.maxScrollExtent ? 0.0 : 4.0;
         });
       });
     _tabController = TabController(
@@ -191,15 +179,13 @@ class _DesignPatternDetailsState extends State<DesignPatternDetails>
                                 begin: _animationIntervalStart,
                                 end: 1.0,
                                 child: FutureBuilder<String>(
-                                  future:
-                                      repository.get(widget.designPattern.id),
+                                  future: repository.get(widget.designPattern.id),
                                   builder: (context, snapshot) {
                                     if (snapshot.hasData) {
                                       return MarkdownBody(data: snapshot.data!);
                                     }
                                     return CircularProgressIndicator(
-                                      backgroundColor:
-                                          Constants.defaultBackGroundColor,
+                                      backgroundColor: Constants.defaultBackGroundColor,
                                       valueColor: AlwaysStoppedAnimation<Color>(
                                         Colors.black.withOpacity(0.65),
                                       ),
